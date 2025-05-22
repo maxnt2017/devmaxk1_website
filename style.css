@@ -1,0 +1,165 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #a8e063, #56ab2f, #a8e063); /* Красивий зелений градієнт */
+    background-size: 200% 200%;
+    color: #333;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.main-header {
+    background-color: rgba(46, 139, 87, 0.9); /* Темно-зелений, напівпрозорий */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.text-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+.button-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.green-button {
+    display: inline-block;
+    background-color: #4CAF50; /* Зелений колір */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.green-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.widgets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.widget {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Щоб iframe не виходив за межі */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.widget h2 {
+    color: #2e8b57; /* Темно-зелений заголовок */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.animated-widget {
+    /* Додаткові стилі для анімації віджетів, якщо потрібно */
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-widget::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-out;
+    opacity: 0;
+}
+
+.animated-widget:hover::before {
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+
+.main-footer {
+    background-color: rgba(46, 139, 87, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 400px; /* Або інша бажана висота */
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Анімація для Google Календаря - це буде складніше і потребує JavaScript,
+   але ось приклад CSS для можливих ефектів */
+.google-calendar-widget iframe {
+    transition: transform 0.5s ease-in-out;
+}
+
+.google-calendar-widget:hover iframe {
+    transform: scale(1.02); /* Збільшення при наведенні */
+}
